@@ -1,0 +1,5 @@
+Test = 'Title:' {TestParam} 'EndTitle.' 'StartTest:' {Question} 'EndTest.'
+
+TestParam = Word ':' String '\n'
+
+Question = 'Question:'+Number
