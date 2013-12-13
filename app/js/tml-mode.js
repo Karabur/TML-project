@@ -9,6 +9,7 @@ CodeMirror.defineMode('tml',function (config, modConfig) {
         token: function (stream, state) {
             console.log('token', stream);
             if (stream.match(/\w+:/)) return 'keyword';
+            if (stream.match(/\w+\./)) return 'keyword';
             stream.next();
             return null;
         }
