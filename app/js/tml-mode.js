@@ -8,8 +8,9 @@ CodeMirror.defineMode('tml',function (config, modConfig) {
         constructor: TmlMode,
         token: function (stream, state) {
             console.log('token', stream);
+            if (stream.match(/\w+:/)) return 'keyword';
             stream.next();
-            return 'asd';
+            return null;
         }
     };
 
