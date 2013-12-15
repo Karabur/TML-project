@@ -1,3 +1,5 @@
 test file
 
 new line in this file
+
+new line 2
