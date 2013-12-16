@@ -1,2 +1,2 @@
-@import url(../libs/codemirror.css);
+@import url(../../bower_components/codemirror/lib/codemirror.css);
 @import url(code-editor.css);
