@@ -1,5 +1,5 @@
 Title:
- TestName: Проверка примитива Image;
+ TestName: РџСЂРѕРІРµСЂРєР° РїСЂРёРјРёС‚РёРІР° Image;
  Difficulty: A1;
  FullTime: 0;
  Questions: 2;
@@ -10,7 +10,7 @@ StartTest:
 Question: 1;
 Weight: 1;
 BeginText:
- Сейчас на экране находится прямоугольный рисунок - окружность. 
+ РЎРµР№С‡Р°СЃ РЅР° СЌРєСЂР°РЅРµ РЅР°С…РѕРґРёС‚СЃСЏ РїСЂСЏРјРѕСѓРіРѕР»СЊРЅС‹Р№ СЂРёСЃСѓРЅРѕРє - РѕРєСЂСѓР¶РЅРѕСЃС‚СЊ. 
 EndText;
 
 Image:
@@ -25,14 +25,14 @@ Ask;
 Question: 2;
 Weight: 1;
 BeginText:
- Сейчас на экране нет рисунка. 
+ РЎРµР№С‡Р°СЃ РЅР° СЌРєСЂР°РЅРµ РЅРµС‚ СЂРёСЃСѓРЅРєР°. 
 EndText;
 Choice:
 AtX: 100;
 AtY: 8;
 Height: 100;
 Width: 100;
-1: ничего endcase;
+1: РЅРёС‡РµРіРѕ endcase;
 Right: 1;
 Ask;
 
