@@ -16,6 +16,7 @@
     "tests"
   ],
   "dependencies": {
-    "angular": "~1.2.5"
+    "angular": "~1.2.5",
+    "codemirror": "~3.20.0"
   }
 }
