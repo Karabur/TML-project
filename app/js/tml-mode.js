@@ -1,4 +1,4 @@
-define(function () {
+define(['codemirror'], function (CodeMirror) {
     CodeMirror.defineMode('tml', function (config, modConfig) {
         var TmlMode = function TmlMode() {
 

@@ -5,3 +5,22 @@
     height: 300px;
     width: 25%;
 }
+
+.hintsList {
+    margin: 5px;
+    padding: 5px;
+    background: #fafafa;
+    box-shadow: 0 0 5px #eee inset ;
+    height: 256px;
+}
+
+.hintsList li {
+    padding: 5px;
+    background: #ffffff;
+    border: 1px solid #eee;
+    color: #0055aa;
+}
+
+.hintsList li:not(:last-child) {
+    border-bottom: none;
+}
