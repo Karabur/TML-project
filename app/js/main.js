@@ -8,7 +8,8 @@ require(['tml-mode'], function (tmlMode) {
         "Questions: 1;\n" +
         "EndTitle.\n";
 
-    var codeEditor = window.editor = new CodeMirror(document.body, {
+
+    var codeEditor = window.editor = new CodeMirror(document.getElementById('editorHolder'), {
         value: tmpTest,
         mode: "tml",
         lineNumbers: true

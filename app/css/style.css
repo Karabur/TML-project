@@ -1,2 +1,14 @@
 @import url(../../bower_components/codemirror/lib/codemirror.css);
-@import url(code-editor.css);
+
+@import "main.css";
+@import "ui.css";
+@import "code-editor.css";
+@import "info-panel.css";
+
+#editorHolder {
+    margin: 5px 5px 5px 5px;
+    width: 70%;
+    min-height: 300px;
+}
+
+
