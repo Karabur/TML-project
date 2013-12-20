@@ -7,7 +7,9 @@ CodeMirror.defineMode('tml',function (config, modConfig) {
     TmlMode.prototype =  {
         constructor: TmlMode,
         token: function (stream, state) {
-            console.log('token', stream);
+            console.log('token', state);
+            state.x=state.x || 0;
+            state.x++;
             if (stream.match(/\w+:/)) return 'keyword';
             if (stream.match(/\w+\./)) return 'keyword';
             stream.next();
