@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Script-Type" content="text/javascript; charset=utf-8">
     <title>TML Project</title>
     <link href="css/style.css" rel="stylesheet"/>
-    <script src="../bower_components/angular/angular.min.js"></script>
+    <script src="../bower_components/angular/angular.js"></script>
     <script data-main="js/main" src="../bower_components/requirejs/require.js"></script>
 </head>
 <body>
@@ -15,7 +15,7 @@
             <li ng-repeat="hint in hints">{{hint.title}}</li>
         </ul>
     </div>
-    <div id="editorHolder" class="panel"></div>
+    <div id="editorHolder" class="panel"><cm-editor></cm-editor></div>
 </div>
 </body>
 </html>

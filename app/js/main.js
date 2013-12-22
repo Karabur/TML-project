@@ -24,10 +24,5 @@ require(['codemirror', 'tml-mode', 'app'], function (CodeMirror, tmlMode, app) {
 
     angular.element(document).ready(function() {
         angular.bootstrap(document, ['myApp']);
-        var codeEditor = window.editor = new CodeMirror(document.getElementById('editorHolder'), {
-            value: tmpTest,
-            mode: "tml",
-            lineNumbers: true
-        });
     });
 });

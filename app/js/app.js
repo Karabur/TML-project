@@ -1,5 +1,5 @@
 'use strict';
-define(['controllers'], function (controllers) {
-    angular.module('myApp', ['controllers']);
+define(['source-service','info-controller'], function () {
+    angular.module('myApp', ['controllers', 'services', 'directives']);
 
 });
