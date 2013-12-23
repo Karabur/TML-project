@@ -1,7 +1,7 @@
 'use strict';
 
 define(['directives'], function (directives) {
-    directives.directive('cmEditor', function (sourceService) {
+    directives.directive('cmEditor', function (sourceService, $rootScope) {
         function link(scope, element, attrs) {
            var editor = window.editor = new CodeMirror(element[0], {
                 value: tmpTest,
@@ -9,8 +9,12 @@ define(['directives'], function (directives) {
                 lineNumbers: true
             });
 
-            editor.on('cursorActivity', function () {
-                console.log(arguments)
+            editor.on('cursorActivity', function (editor) {
+                var doc = editor.getDoc();
+                var token = editor.getTokenAt(doc.getCursor());
+                $rootScope.$apply(function () {
+                    $rootScope.$broadcast('hintslist', token.state.context.getAutocompletionsList())
+                })
             })
         }
 

@@ -1,24 +1,25 @@
-define(['codemirror'], function (CodeMirror) {
+define(['codemirror', 'editor-context'], function (CodeMirror, EditorContext) {
     CodeMirror.defineMode('tml', function (config, modConfig) {
-        var TmlMode = function TmlMode() {
+        var indentUnit = config.indentUnit;
 
-        };
+        function rootTokenize(stream, state) {
+            if (stream.match(/\w+:/)) return 'keyword';
+            if (stream.match(/\w+\./)) return 'keyword';
+            stream.next();
+            return null;
+        }
 
-        TmlMode.prototype = {
-            constructor: TmlMode,
+        return {
             token: function (stream, state) {
-                state.x = state.x || 0;
-                state.x++;
-                if (stream.match(/\w+:/)) return 'keyword';
-                if (stream.match(/\w+\./)) return 'keyword';
-                stream.next();
-                return null;
+                return state.tokenize(stream, state);
             },
+
             startState: function () {
-                return {};
+                return {
+                    context: new EditorContext('root'),
+                    tokenize: rootTokenize
+                }
             }
         };
-
-        return new TmlMode();
     });
-})
+});

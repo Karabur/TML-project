@@ -1,3 +1,7 @@
+.CodeMirror {
+    border: 1px solid #ccc;
+}
+
 .CodeMirror-focused {
     border: 1px solid #aaa;
 }
