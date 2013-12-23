@@ -12,6 +12,7 @@ define(['directives'], function (directives) {
             editor.on('cursorActivity', function (editor) {
                 var doc = editor.getDoc();
                 var token = editor.getTokenAt(doc.getCursor());
+                console.log(token.state.context);
                 $rootScope.$apply(function () {
                     $rootScope.$broadcast('hintslist', token.state.context.getAutocompletionsList())
                 })

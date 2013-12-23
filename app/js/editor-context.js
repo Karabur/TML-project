@@ -1,8 +1,9 @@
 'use strict';
 
 define([], function () {
-    function EditorContext(type) {
+    function EditorContext(type, prev) {
         this.type = type;
+        this.prev = prev || null;
     }
     EditorContext.prototype = {
         constructor:EditorContext,
