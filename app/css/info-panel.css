@@ -10,17 +10,31 @@
     margin: 5px;
     padding: 5px;
     background: #fafafa;
-    box-shadow: 0 0 5px #eee inset ;
+    box-shadow: 0 0 5px #999 inset ;
     height: 256px;
 }
 
 .hintsList li {
-    padding: 5px;
     background: #ffffff;
-    border: 1px solid #eee;
     color: #0055aa;
+    line-height: 24px;
+    margin-bottom: 6px;
+    box-shadow: 0 0 3px #aaa;
+}
+
+.hintsList li .title {
+    padding: 5px;
 }
 
 .hintsList li:not(:last-child) {
     border-bottom: none;
 }
+
+.hintsList li .index {
+    display: inline-block;
+    padding: 0 5px;
+    height: 100%;
+    background: #CBE5FF;
+    color: #865B00;
+}
+

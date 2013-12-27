@@ -13,7 +13,7 @@
     <div id="editorHolder" class="panel"><cm-editor></cm-editor></div>
     <div id="infoPanel" class="panel" ng-controller="infoPanelCtrl"><h3>Edit hints</h3>
         <ul class="hintsList">
-            <li ng-repeat="hint in hints">{{hint.title}}</li>
+            <li ng-repeat="hint in hints"><span class="index">{{ $index + 1 }}</span><span class="title">{{hint.title}}</span></li>
         </ul>
     </div>
 </div>

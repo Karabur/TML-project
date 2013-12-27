@@ -28,7 +28,7 @@ define(['directives'], function (directives) {
 
             editor.on('cursorActivity',updateContext);
             editor.on('focus', updateContext);
-            editor.on('blur', clearContext);
+//            editor.on('blur', clearContext);
         }
 
         return {
