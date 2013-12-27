@@ -1,6 +1,8 @@
 define(['codemirror', 'editor-context'], function (CodeMirror, EditorContext) {
+
     CodeMirror.defineMode('tml', function (config, modConfig) {
         var indentUnit = config.indentUnit;
+
 
         function pushContext(state, type) {
             state.context = new EditorContext(type, state.context);

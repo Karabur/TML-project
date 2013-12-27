@@ -67,9 +67,7 @@ define([], function () {
             return this.context.children.map(function (ch) {
                 var child = Contexts[ch];
                 if (!child) throw 'Context undefined: ' + this.type + ' -> ' + ch;
-                return {
-                    title: child.title
-                }
+                return angular.copy(child);
             }.bind(this))
         }
     };
