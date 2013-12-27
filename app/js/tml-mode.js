@@ -11,15 +11,19 @@ define(['codemirror', 'editor-context'], function (CodeMirror, EditorContext) {
             state.context = state.context.prev;
         }
 
-        function rootTokenize(stream, state) {
-            var match = stream.match(/\w+:/);
+        function tokenizeBlock(stream, state) {
+            var context = state.context;
+            var match = stream.match(/(\w+)\s*?:/);
+            var child;
             if (match) {
-                if (match[0]=='Title:') pushContext(state, 'title');
+                var keyword = match[1];
+                if (child = context.getChild(keyword)) pushContext(state, child);
                 return 'keyword';
             }
-            match = stream.match(/\w+\./);
+
+            match = stream.match(/(\w+)\s*?\./);
             if (match) {
-                if (match[0]=='EndTitle.' && state.context.type == 'title') popContext(state);
+                if (context.closedBy(match[1])) popContext(state);
                 return 'keyword';
             }
             stream.next();
@@ -34,7 +38,7 @@ define(['codemirror', 'editor-context'], function (CodeMirror, EditorContext) {
             startState: function () {
                 return {
                     context: new EditorContext('root'),
-                    tokenize: rootTokenize
+                    tokenize: tokenizeBlock
                 }
             }
         };
