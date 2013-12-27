@@ -17,7 +17,7 @@ define([], function () {
             title: 'Test Suite',
             tag: 'StartTest',
             endTag: 'EndTest',
-            children: ['']
+            children: []
         },
         'test-name' : {
             tag: 'TestName',
