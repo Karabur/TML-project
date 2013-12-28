@@ -27,6 +27,9 @@ define(['codemirror', 'editor-context'], function (CodeMirror, EditorContext) {
             if (match) {
                 if (context.closedBy(match[1])) popContext(state);
                 return 'keyword';
+            } else if (stream.match(';')) {
+                popContext(state);
+                return 'keyword';
             }
             stream.next();
             return null;
