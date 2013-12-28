@@ -22,24 +22,18 @@ define(['directives', 'codemirror'], function (directives, CodeMirror) {
                 var preLine = '';
                 if (cur.ch) preLine = '\n';
                 doc.replaceSelection(preLine + completion.tag + ':\n\n' + completion.endTag + '.\n', 'start');
-                cur.line += 1 + (preLine ? 1 : 0);
+                cur.line += (preLine ? 1 : 0);
+                doc.markText({line: cur.line, ch: 0}, {line: cur.line + 1, ch: 0}, {atomic: true});
+                doc.markText({line: cur.line + 2, ch: 0}, {line: cur.line + 3, ch: 0}, {atomic: true});
+                cur.line++;
                 doc.setCursor(cur);
             }
         }
 
         CodeMirror.keyMap.TML = {
-            fallthrough: 'default',
-            'Alt-1': autoComplete.bind(null, 1),
-            'Alt-2': autoComplete.bind(null, 2),
-            'Alt-3': autoComplete.bind(null, 3),
-            'Alt-4': autoComplete.bind(null, 4),
-            'Alt-5': autoComplete.bind(null, 5),
-            'Alt-6': autoComplete.bind(null, 6),
-            'Alt-7': autoComplete.bind(null, 7),
-            'Alt-8': autoComplete.bind(null, 8),
-            'Alt-9': autoComplete.bind(null, 9),
-            'Alt-0': autoComplete.bind(null, 0)
+            fallthrough: 'default'
         };
+        for (var i = 0; i < 10; i++) { CodeMirror.keyMap.TML['Alt-' + i] = autoComplete.bind(null, i) }
 
         function updateContext() {
             var context = getCursorContext();
