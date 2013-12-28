@@ -27,6 +27,13 @@ define(['directives', 'codemirror'], function (directives, CodeMirror) {
                 doc.markText({line: cur.line + 2, ch: 0}, {line: cur.line + 3, ch: 0}, {atomic: true});
                 cur.line++;
                 doc.setCursor(cur);
+            } else {
+                //one-tag element
+                cur = doc.getCursor('start');
+                doc.replaceSelection(completion.tag + ': ;', 'start');
+                doc.markText({line: cur.line, ch: cur.ch}, {line: cur.line, ch: completion.tag.length + 2}, {atomic: true});
+                cur.ch += completion.tag.length + 2;
+                doc.setCursor(cur);
             }
         }
 
